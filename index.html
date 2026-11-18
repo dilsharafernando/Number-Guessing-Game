@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <header class="game-header">
+      <h1>Guess the Number</h1>
+      <button id="restartBtn" class="btn-secondary">New Game</button>
+    </header>
+
+    <!-- Difficulty Selector -->
+    <div class="difficulty-bar" id="difficultyBar">
+      <button class="diff-btn" data-max="50" data-attempts="10">Easy (1-50)</button>
+      <button class="diff-btn active" data-max="100" data-attempts="10">Medium (1-100)</button>
+      <button class="diff-btn" data-max="500" data-attempts="12">Hard (1-500)</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+      <div class="stat-box">
+        <span class="stat-label">Attempts Left</span>
+        <span class="stat-value" id="attemptsLeft">10</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Guesses Made</span>
+        <span class="stat-value" id="guessesMade">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Best Score</span>
+        <span class="stat-value" id="bestScore">-</span>
+      </div>
+    </div>
+
+    <!-- Feedback Box -->
+    <div class="feedback-box" id="feedbackBox">
+      I'm thinking of a number between <strong>1</strong> and <strong id="maxRangeText">100</strong>.
+    </div>
+
+    <!-- Input Area -->
+    <form class="guess-form" id="guessForm">
+      <input
+        type="number"
+        id="guessInput"
+        placeholder="Enter your guess..."
+        min="1"
+        max="100"
+        required
+        autocomplete="off"
+      />
+      <button type="submit" id="guessBtn" class="btn-primary">Guess</button>
+    </form>
+
+    <!-- Previous Guesses -->
+    <div class="history-section">
+      <span class="history-title">Previous Guesses:</span>
+      <div class="history-list" id="historyList">
+        <span class="empty-history">No guesses yet</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
